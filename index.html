@@ -6,19 +6,32 @@
   </head>
   <body>
     <style>
-    h1 {
+    h1, h2 {
       top: 30%;
       position: fixed;
       height: 100%;
       display: table-cell;
     }
-    h1::after {
+    h1::after, h2::after {
       content: '';
       position: relative;
       padding-right: 1vw;
       background-color: black;
     }
+    @keyframes spin {
+      0% { transform: rotate(0deg) }
+      100% { transform: rotate(360deg) }
+    }
+    h2::after {
+      top: 50%;
+      left: 50%;
+      width: 20vw;
+      height: 20vw;
+      position: fixed;
+      animation: spin 2s infinite ease-in-out;
+      transform-origin: top left;
+    }
     </style>
-    <h1>There comes a time when you can work your way through anything.</h1>
+    <h2>Sometimes we do things just to go along for the ride.</h2>
   </body>
 </html>
